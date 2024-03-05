@@ -5,10 +5,6 @@ import art
 def compare(guess):
     """
     Compares the user's guess with the chosen number and provides feedback.
-
-    Args:
-        guess (int): The user's guess.
-
     Returns:
         None
     """
@@ -43,12 +39,13 @@ while play_again == True:
         # Difficulty selection
         difficulty = input("Choose a difficulty. \nType 'easy' or 'hard': " ).lower()
         attempts = 0
-
+        # attempts assignment based on difficulty
         if difficulty == 'easy':
             attempts = 10
         elif difficulty == 'hard':
             attempts = 5
-
+            
+        # input error handling loops.
         if difficulty == "easy" or difficulty == "hard":
             loop = True
             while loop == True:
@@ -59,6 +56,7 @@ while play_again == True:
                 else:
                     print("Please enter a number which is within 0 to 100.")
             accepted = False
+            
         else:
             os.system('cls')
             print(art.logo)
