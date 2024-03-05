@@ -2,8 +2,16 @@ import random
 import os
 import art
 
-
 def compare(guess):
+    """
+    Compares the user's guess with the chosen number and provides feedback.
+
+    Args:
+        guess (int): The user's guess.
+
+    Returns:
+        None
+    """
     global attempts
     global loop
 
@@ -14,7 +22,7 @@ def compare(guess):
         print("You've run out of guesses, you lose.")
     elif chosen_number == guess:
         loop = False
-        print(f"You got it! The answer was {chosen_number}, while haveing {attempts} attempts left.")
+        print(f"You got it! The answer was {chosen_number}, while having {attempts} attempts left.")
     elif chosen_number > guess:
         attempts -= 1
         print(f"Too low.\nGuess again.\nYou have {attempts} attempts remaining to guess the number.")
@@ -22,8 +30,7 @@ def compare(guess):
         attempts -= 1
         print(f"Too high.\nGuess again.\nYou have {attempts} attempts remaining to guess the number.")
 
-
-
+# Main game loop
 play_again = True
 while play_again == True:
     print(art.logo)
@@ -33,6 +40,7 @@ while play_again == True:
     accepted = True
     while accepted == True:
 
+        # Difficulty selection
         difficulty = input("Choose a difficulty. \nType 'easy' or 'hard': " ).lower()
         attempts = 0
 
@@ -49,7 +57,7 @@ while play_again == True:
                 if guess.isnumeric() and 0 <= int(guess) <= 100:
                     compare(guess)
                 else:
-                    print("Please enter a number which is with in 0 to 100.")
+                    print("Please enter a number which is within 0 to 100.")
             accepted = False
         else:
             os.system('cls')
@@ -57,6 +65,7 @@ while play_again == True:
             print("Welcome to the Number Guessing Game!")
             print("I'm thinking of a number between 1 and 100")
 
+    # Prompt to play again
     again = input("Do you want to play again, 'yes' or 'no': ")
     if again == 'yes':
         os.system('cls')
