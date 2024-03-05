@@ -44,6 +44,13 @@ python number_guessing_game.py
 
 ```
 Welcome to the Number Guessing Game!
+I'm thinking of a number between 1 and 100
+Choose a difficulty. Type 'easy' or 'hard': easy
+Make a guess: 45
+Too low.
+Guess again.
+You have 9 attempts remaining to guess the number.
+Make a guess:
 ```
 
 ## Author
