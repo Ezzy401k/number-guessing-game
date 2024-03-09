@@ -25,7 +25,7 @@ git clone https://github.com/Ezzy401k/number-guessing-game.git
 2. Navigate to the project directory:
 
 ```bash
-cd number-guessing-game
+cd number_guessing_game
 ```
 
 3. Run the program:
